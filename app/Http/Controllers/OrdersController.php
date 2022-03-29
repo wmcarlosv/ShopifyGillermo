@@ -116,10 +116,14 @@ class OrdersController extends Controller
         $response = json_decode(file_get_contents('php://input'), true);
         file_put_contents("order.json", json_encode($response));
         if(isset($response['line_items'])){
-            $order = Order::first('order_no',$response['order_number']);
-            $oder->order_status = '';
-            $order->payment_status = $response['financial_status'];
-            $order->update();
+            $orders = Order::where('order_no',$response['order_number'])->get();
+            foreach($orders as $order){
+                $obj_order = Order::findorfail($order->id);
+                $obj_order->order_status = '';
+                $obj_order->payment_status = $response['financial_status'];
+                $obj_order->update();
+            }
+            
         }
     }
 }
