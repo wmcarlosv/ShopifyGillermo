@@ -100,6 +100,9 @@ class OrdersController extends Controller
                 $order->product_sku = $items[$i]['sku'];
                 $order->qty = $items[$i]['quantity'];
                 $order->product_name = $items[$i]['name'];
+                $order->discount = $response['total_discounts'];
+                $order->parcial_total = $response['subtotal_price'];
+                $order->total = $response['total_price'];
                 $order->order_no = $response['order_number'];
                 $order->order_date = date('Y-m-d H:m:s', strtotime($response['created_at']));
                 $order->save();
