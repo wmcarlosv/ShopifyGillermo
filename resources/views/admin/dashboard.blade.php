@@ -38,6 +38,15 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Url WebHook Orders</h3>
+            <hr />
+            <p>
+                {{ route('get_orders') }}
+            </p>
+        </div>
+    </div>
 @stop
 
 @section('js')
