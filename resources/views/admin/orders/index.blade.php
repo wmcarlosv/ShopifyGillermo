@@ -46,9 +46,9 @@
 									<td>{{ $order->product_sku }}</td>
 									<td>{{ $order->qty }}</td>
 									<td>{{ $order->product_name }}</td>
-									<td>{{ $order->discount }}</td>
-									<td>{{ ($order->parcial_total + $order->discount) }}</td>
-									<td>{{ $order->total }}</td>
+									<td>{{ number_format($order->discount, 2) }}</td>
+									<td>{{ number_format($order->parcial_total + $order->discount), 2) }}</td>
+									<td>{{ number_format($order->total, 2) }}</td>
 									<td>
 										@if($order->payment_status == 'pending')
 											Pendiente
