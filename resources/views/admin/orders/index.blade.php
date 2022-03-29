@@ -46,9 +46,9 @@
 									<td>{{ $order->product_sku }}</td>
 									<td>{{ $order->qty }}</td>
 									<td>{{ $order->product_name }}</td>
-									<td></td>
-									<td></td>
-									<td></td>
+									<td>{{ $order->discount }}</td>
+									<td>{{ $order->parcial_total }}</td>
+									<td>{{ $order->total }}</td>
 									<td></td>
 									<td></td>
 									<td>{{ $order->order_no }}</td>
