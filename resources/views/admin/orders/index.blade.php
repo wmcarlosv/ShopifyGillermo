@@ -48,7 +48,7 @@
 									<td>{{ $order->product_name }}</td>
 									<td>{{ $order->discount }}</td>
 									<td>{{ $order->parcial_total }}</td>
-									<td>{{ $order->total }}</td>
+									<td>{{ ($order->total-$order->discount) }}</td>
 									<td>
 										@if($order->payment_status == 'pending')
 											Pendiente
