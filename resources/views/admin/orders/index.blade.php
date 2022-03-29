@@ -20,39 +20,39 @@
 							<tr>
 								<th>Nombre del Cliente</th>
 								<th>Telenfo del Cliente</th>
-								<th>Order Nro</th>
-								<th>Order Date</th>
-								<th>Currency</th>
-								<th>Status</th>
-								
-								
-								<th>Country</th>
-								<th>Province</th>
-								<th>City</th>
-								<th>Address</th>
-								<th>Product Name</th>
-								<th>Price</th>
-								<th>Quantity</th>
-								<th>Store</th>
+								<th>Etiquetas</th>
+								<th>Direccion</th>
+								<th>Direccion de Envio</th>
+								<th>Sku Producto</th>
+								<th>Cantidad</th>
+								<th>Nombre Producto</th>
+								<th>Descuento</th>
+								<th>Total Parcial</th>
+								<th>Total</th>
+								<th>Estado del Pago</th>
+								<th>Estado del Pedido</th>
+								<th>Nro de Orden</th>
+								<th>Fecha</th>
 							</tr>
 						</thead>
 						<tbody id="load_data">
 							@foreach($orders as $order)
 								<tr>
-									<td>{{ $order->order_no }}</td>
-									<td>{{ $order->order_date }}</td>
-									<td>{{ $order->currency }}</td>
-									<td>{{ $order->status }}</td>
 									<td>{{ $order->customer }}</td>
 									<td>{{ $order->phone }}</td>
-									<td>{{ $order->country }}</td>
-									<td>{{ $order->province }}</td>
-									<td>{{ $order->city }}</td>
+									<td>{{ $order->tags }}</td>
 									<td>{{ $order->address }}</td>
-									<td>{{ $order->product_name }}</td>
-									<td>{{ $order->price }}</td>
+									<td>{{ $order->shipping_address }}</td>
+									<td>{{ $order->product_sku }}</td>
 									<td>{{ $order->qty }}</td>
-									<td>{{ $order->store }}</td>
+									<td>{{ $order->product_name }}</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>{{ $order->order_no }}</td>
+									<td>{{ $order->order_date }}</td>
 								</tr>
 							@endforeach
 						</tbody>

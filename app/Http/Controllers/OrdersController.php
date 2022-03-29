@@ -92,20 +92,16 @@ class OrdersController extends Controller
             $items = $response['line_items'];
             for($i=0;$i < count($items); $i++){
                 $order = New Order();
-                $order->order_no = $response['order_number'];
-                $order->order_date = date('Y-m-d H:m:s', strtotime($response['created_at']));
-                $order->currency = $response['currency'];
-                $order->status = $response['financial_status'];
                 $order->customer = $response['customer']['first_name']." ".$response['customer']['last_name'];
                 $order->phone = $response['billing_address']['phone'];
-                $order->country = $response['billing_address']['country'];
-                $order->province = $response['billing_address']['province'];
-                $order->city = $response['billing_address']['city'];
-                $order->address = $response['billing_address']['address1'];
-                $order->product_name = $items[$i]['name'];
-                $order->price = $items[$i]['price'];
+                $order->tags = $response['customer']['tags'];
+                $order->address = $response['billing_address']['country']." ".$response['billing_address']['province']." ".$response['billing_address']['city']." ".$response['billing_address']['address1'];
+                $order->shipping_address = $response['shipping_address']['country']." ".$response['shipping_address']['province']." ".$response['shipping_address']['city']." ".$response['shipping_address']['address1'];
+                $order->product_sku = $items[$i]['sku'];
                 $order->qty = $items[$i]['quantity'];
-                $order->store = $items[$i]['vendor'];
+                $order->product_name = $items[$i]['name'];
+                $order->order_no = $response['order_number'];
+                $order->order_date = date('Y-m-d H:m:s', strtotime($response['created_at']));
                 $order->save();
             }
 

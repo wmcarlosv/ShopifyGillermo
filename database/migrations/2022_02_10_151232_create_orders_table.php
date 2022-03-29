@@ -15,20 +15,21 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('order_no',255)->nullable();
-            $table->datetime('order_date')->nullable();
-            $table->string('currency',255)->nullable();
-            $table->string('status',100)->nullable();
             $table->string('customer',255)->nullable();
             $table->string('phone',100)->nullable();
-            $table->string('country',100)->nullable();
-            $table->string('province',100)->nullable();
-            $table->string('city',100)->nullable();
+            $table->text('tags')->nullable();
             $table->text('address')->nullable();
-            $table->string('product_name',255)->nullable();
-            $table->float('price')->nullable();
+            $table->text('shipping_address')->nullable();
+            $table->string('product_sku',255)->nullable();
             $table->integer('qty')->nullable();
-            $table->string('store',255)->nullable();
+            $table->string('product_name',255)->nullable();
+            $table->float('discount')->nullable();
+            $table->float('parcial_total')->nullable();
+            $table->float('total')->nullable();
+            $table->string('payment_status')->nullable();
+            $table->string('order_status')->nullable();
+            $table->string('order_no',255)->nullable();
+            $table->datetime('order_date')->nullable();
             $table->timestamps();
         });
     }
