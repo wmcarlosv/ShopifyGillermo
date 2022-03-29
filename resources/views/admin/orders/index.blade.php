@@ -56,7 +56,7 @@
 											Pagado
 										@endif
 									</td>
-									<td>{{ $order->order_status }}</td>
+									<td><a href="{{ $order->order_status }}" target="_blank">Ver Estado</a></td>
 									<td>{{ $order->order_no }}</td>
 									<td>{{ $order->order_date }}</td>
 								</tr>
