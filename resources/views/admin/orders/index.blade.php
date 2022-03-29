@@ -54,8 +54,8 @@
 											Pendiente
 										@elseif($order->payment_status == 'paid')
 											Pagado
-										@else
-											{{ $order->payment_status }}
+										@elseif($order->payment_status == 'voided')
+											Anulado
 										@endif
 									</td>
 									<td><a href="{{ $order->order_status }}" target="_blank">Ver Estado</a></td>
