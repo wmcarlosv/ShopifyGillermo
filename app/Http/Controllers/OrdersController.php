@@ -103,7 +103,7 @@ class OrdersController extends Controller
                 $order->parcial_total = $response['subtotal_price'];
                 $order->total = $response['total_price'];
                 $order->payment_status = $response['financial_status'];
-                $order->order_status = $response['order_status_url'];
+                $order->order_status = $response['fulfillment_status'];
                 $order->order_no = $response['order_number'];
                 $order->order_date = date('Y-m-d H:m:s', strtotime($response['created_at']));
                 $order->save();
@@ -119,7 +119,7 @@ class OrdersController extends Controller
             $orders = Order::where('order_no',$response['order_number'])->get();
             foreach($orders as $order){
                 $obj_order = Order::findorfail($order->id);
-                $obj_order->order_status = $response['order_status_url'];
+                $obj_order->order_status = $response['fulfillment_status'];
                 $obj_order->payment_status = $response['financial_status'];
                 $obj_order->update();
             }
