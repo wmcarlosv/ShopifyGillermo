@@ -52,11 +52,6 @@ class EventServiceProvider extends ServiceProvider
                     'text'=>'Orders',
                     'route'=>'orders.index',
                     'icon'=>'fas fa-file-contract'
-                ],
-                [
-                    'text'=>'Products',
-                    'route'=>'products.index',
-                    'icon'=>'fas fa-box'
                 ]
             );
         });

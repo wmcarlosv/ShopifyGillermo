@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Order;
-use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -28,7 +27,6 @@ class HomeController extends Controller
     {
         $users = User::all();
         $orders = Order::all();
-        $products = Product::all();
-        return view('admin.dashboard',Compact('users','orders','products'));
+        return view('admin.dashboard',Compact('users','orders'));
     }
 }

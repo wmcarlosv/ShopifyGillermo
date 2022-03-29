@@ -104,6 +104,7 @@ class OrdersController extends Controller
                 $order->parcial_total = $response['subtotal_price'];
                 $order->total = $response['total_price'];
                 $order->payment_status = $response['financial_status'];
+                $order->order_status = '';
                 $order->order_no = $response['order_number'];
                 $order->order_date = date('Y-m-d H:m:s', strtotime($response['created_at']));
                 $order->save();
@@ -112,10 +113,13 @@ class OrdersController extends Controller
         }
     }
 
-    public function fast_update($id, $column, $value){
-        $order = Order::findorfail($id);
-        $order->$column = $value;
-        $order->update();
-        return json_encode($order);
+    public function update_order(){
+        $response = json_decode(file_get_contents('php://input'), true);
+        if(isset($response['line_items'])){
+            $order = Order::first('order_no',$response['order_number']);
+            $oder->order_status = '';
+            $order->payment_status = $response['financial_status'];
+            $order->update();
+        }
     }
 }

@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="info-box">
               <span class="info-box-icon bg-info"><i class="fas fa-users"></i></span>
               <div class="info-box-content">
@@ -18,22 +18,12 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="info-box">
               <span class="info-box-icon bg-success"><i class="fas fa-file-contract"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Orders</span>
                 <span class="info-box-number">{{ $orders->count() }}</span>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="info-box">
-              <span class="info-box-icon bg-red"><i class="fas fa-box"></i></span>
-              <div class="info-box-content">
-                <span class="info-box-text">Products</span>
-                <span class="info-box-number">{{ $products->count() }}</span>
               </div>
             </div>
         </div>

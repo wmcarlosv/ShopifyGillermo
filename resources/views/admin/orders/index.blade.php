@@ -50,7 +50,7 @@
 									<td>{{ $order->parcial_total }}</td>
 									<td>{{ $order->total }}</td>
 									<td>{{ $order->payment_status }}</td>
-									<td></td>
+									<td>{{ $order->order_status }}</td>
 									<td>{{ $order->order_no }}</td>
 									<td>{{ $order->order_date }}</td>
 								</tr>

@@ -15,5 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/orders/getOrder',[App\Http\Controllers\OrdersController::class, 'get_orders'])->name('get_orders');
-Route::post('/products/getProduct',[App\Http\Controllers\ProductsController::class, 'get_product']);
-Route::post('/products/updateProduct',[App\Http\Controllers\ProductsController::class, 'update_product']);
+Route::post('/orders/updateOrder',[App\Http\Controllers\OrdersController::class, 'update_order'])->name('update_order');

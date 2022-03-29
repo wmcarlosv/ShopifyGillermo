@@ -26,6 +26,4 @@ Route::group(['prefix'=>'admin', 'middleware'=>array('auth')], function(){
     Route::put('update_profile',[App\Http\Controllers\UsersController::class, 'update_profile'])->name('update_profile');
     Route::put('change_password',[App\Http\Controllers\UsersController::class, 'change_password'])->name('change_password');
     Route::resource('orders',App\Http\Controllers\OrdersController::class);
-    Route::get('/fast-update/{id}/{column}/{value}', [App\Http\Controllers\OrdersController::class, 'fast_update'])->name('fast_update');
-    Route::resource('products',App\Http\Controllers\ProductsController::class);
 });
