@@ -35,6 +35,11 @@
             <p>
                 {{ route('get_orders') }}
             </p>
+            <hr />
+            <h3>Url WebHook Orders Update</h3>
+            <p>
+                {{ route('update_order') }}
+            </p>
         </div>
     </div>
 @stop
