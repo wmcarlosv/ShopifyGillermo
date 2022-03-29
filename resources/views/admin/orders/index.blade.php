@@ -52,7 +52,7 @@
 									<td>
 										@if($order->payment_status == 'pending')
 											Pendiente
-										@else if($order->payment_status == 'paid')
+										@elseif($order->payment_status == 'paid')
 											Pagado
 										@endif
 									</td>
