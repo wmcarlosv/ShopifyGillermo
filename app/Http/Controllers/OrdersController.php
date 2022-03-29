@@ -87,7 +87,6 @@ class OrdersController extends Controller
     public function get_orders(){
 
         $response = json_decode(file_get_contents('php://input'), true);
-        file_put_contents("order.json", json_encode($response));
         if(isset($response['line_items'])){
             $items = $response['line_items'];
             for($i=0;$i < count($items); $i++){
@@ -115,6 +114,7 @@ class OrdersController extends Controller
 
     public function update_order(){
         $response = json_decode(file_get_contents('php://input'), true);
+        file_put_contents("order.json", json_encode($response));
         if(isset($response['line_items'])){
             $order = Order::first('order_no',$response['order_number']);
             $oder->order_status = '';
