@@ -27,7 +27,7 @@ class CreateOrdersTable extends Migration
             $table->float('parcial_total')->nullable();
             $table->float('total')->nullable();
             $table->string('payment_status')->nullable();
-            $table->string('order_status')->nullable();
+            $table->text('order_status')->nullable();
             $table->string('order_no',255)->nullable();
             $table->datetime('order_date')->nullable();
             $table->timestamps();
